@@ -1,0 +1,59 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-user
+      author: Petya
+      changes:
+        - createTable:
+            tableName: users_ahub
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(200)
+                  constraints:
+                    unique: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(40)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: surname
+                  type: varchar(40)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: password
+                  type: varchar(40)
+                  constraints:
+                    nullable: false
+        - createTable:
+            tableName: users_profile
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: gender
+                  type: varchar
+              - column:
+                  name: ahubLink
+                  type: varchar
+              - column:
+                  name: user_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: users_profile_user_fk
+                    referencedTableName: users_ahub
+                    referencedColumnNames: id

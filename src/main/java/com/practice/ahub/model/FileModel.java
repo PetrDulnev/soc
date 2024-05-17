@@ -14,9 +14,10 @@ import java.time.LocalDateTime;
 public class FileModel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
     @Column(unique = true)
     private String fileName;
     private String contentType;
     private LocalDateTime createdDate;
+    private boolean deleted;
 }

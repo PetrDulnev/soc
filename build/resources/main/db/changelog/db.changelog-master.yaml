@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changeset/create-user-table.yml
+  - include:
+      file: db/changelog/changeset/change-varchar-user-table-password-colmn.yml
+  - include:
+      file: db/changelog/changeset/change-name-column-ahublink.yml

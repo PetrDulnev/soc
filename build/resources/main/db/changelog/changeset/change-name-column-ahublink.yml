@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: change-name-column
+      author: Petya
+      changes:
+        - renameColumn:
+            tableName: users_profile
+            oldColumnName: ahubLink
+            newColumnName: ahub_link
